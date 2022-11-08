@@ -1,0 +1,162 @@
+package com.example.registration
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var resultTextView: EditText
+    private lateinit var registrationButton: Button
+    private lateinit var Name: EditText
+    private lateinit var Lastname: EditText
+    private lateinit var Email: EditText
+    private lateinit var Password: EditText
+    private lateinit var Confirmation: CheckBox
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        resultTextView = findViewById(R.id.editTextTextPersonName5)
+        registrationButton = findViewById(R.id.button)
+        Name = findViewById(R.id.editTextTextPersonName5)
+        Lastname = findViewById(R.id.editTextTextPersonName2)
+        Email = findViewById(R.id.editTextTextPersonName3)
+        Password = findViewById(R.id.editTextTextPersonName4)
+        Confirmation = findViewById(R.id.checkBox2)
+
+        registrationButton.setOnClickListener(){
+            val name = Name.text.toString()
+            val email = Email.text.toString()
+            val password = Password.text.toString()
+            if(password.length>8) {
+                if (name.length>5){
+                    if (email.contains("@") and email.contains(".") and email.contains("mail")) {
+                        if (Confirmation.isChecked) {
+                            Toast.makeText(applicationContext, "successful payment", Toast.LENGTH_LONG).show()
+                        }
+                        }
+                        }
+            }
+            }
+            }
+        }
+        <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#270761"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="გვარი"
+        android:inputType="textPersonName"
+        android:textColor="#939191"
+        android:textColorHint="#939191"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="365dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="200dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Gmail"
+        android:textColorHint="#939191"
+        android:textColor="#939191"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.858" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="365dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="136dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="პაროლი"
+        android:textColorHint="#939191"
+        android:textColor="#939191"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.918" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ვეთანხმები წესებსა და პირობებს"
+        android:textColor="#FAF9F9"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintVertical_bias="0.504" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ED0785"
+        android:text="რეგისტრაცია"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="სახელი"
+        android:inputType="textPersonName"
+        android:textColor="#939191"
+        android:textColorHint="#939191"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="172dp"
+        android:layout_height="27dp"
+        android:text="რეგისტრაცია"
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
