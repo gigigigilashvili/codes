@@ -33,9 +33,10 @@ class MainActivity : AppCompatActivity() {
             val password = Password.text.toString()
             if(password.length>8) {
                 if (name.length>5){
-                    if (email.contains("@") and email.contains(".") and email.contains("mail")) {
-                        if (Confirmation.isChecked) {
-                            Toast.makeText(applicationContext, "successful payment", Toast.LENGTH_LONG).show()
+                    if (password.contains("[0-9]".to.Regex())){
+                        if (email.contains("@") and email.contains(".") and email.contains("mail")) {
+                            if (Confirmation.isChecked) {
+                                Toast.makeText(applicationContext, "successful payment", Toast.LENGTH_LONG).show()
                         }
                         }
                         }
